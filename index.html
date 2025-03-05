@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16908885008"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16908885008');
+</script>
+
+<!-- Event snippet for click conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16908885008/65kPCIiYqqYaEJC45P4-',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inversiones en Guatemala</title>
@@ -20,7 +48,7 @@
             <div class="right-block">
                 <form class="form">
                     <div class="form__header">Esta noticia es para todos los guatemaltecos</div>
-                    <a href="https://spectraxro.com/mWvcrnDW?utm_campaign=kms_panama" class="btn">Leer la noticia</a>
+                   <a onclick="return gtag_report_conversion('https://spectraxro.com/mWvcrnDW?utm_campaign=kms_panama');" href="https://spectraxro.com/mWvcrnDW?utm_campaign=kms_panama" class="btn">Leer la noticia</a>
                 </form>
                 <div class="steps">
                     <div class="steps__item">
